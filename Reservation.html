@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Contact.css">
     <link rel="stylesheet" href="css/Reservation.css">
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito|Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prosto+One" rel="stylesheet">
-  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Reservation</title>
 
 </head>
@@ -31,14 +32,19 @@
     
         <div class="nav">
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Gallerie</a></li>
-                <li><a href="#">Réservation</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Gallery.html">Gallerie</a></li>
+                <li><a style="color:#154d3b;" href="Reservation.html">Réservation</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+   
     <form name="formulaire" class="select">
+        
+        <div id="select">
+            <h3 id="title1"">Reservation</h3>
+            <h4 id="title2">Reserver Ajourd'huis, et retoure Ca fait à 24 heurs!</h4>
         <select name="véhicule">
             <option>choix véhicule</option>
             <option>moto</option>
@@ -62,11 +68,64 @@
             <option>selectioner la Boite De Vitess</option>
             <option></option>
         </select>
-
-        <input type="number">
-        <button>Le prix</button>
+       
+        <input id="number" type="number">
+        <button id="select-submit">Le prix</button>
+        </div>
     </form>
 
+
+    <footer>
+        <div class="footer">
+            <div class="column">
+                <ul>
+                    <li class="title">Ma Vehicule</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li class="title">LINKS</li>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Gallerie</a></li>
+                    <li><a href="#">Réservation</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li class="title">SHORT CUT</li>
+                    <li><a href="#">Nos Service</a></li>
+                    <li><a href="#">Pourquoi NOUS ?</a></li>
+                    <li><a href="#">Le Plus Demander</a></li>
+                    <li><a href="#">Qui Sommes-Nous ?</a></li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li class="title">NEWSLETTER</li>
+                    <li>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Email*" maxlength="80" required /><button
+                                class="btn1"><i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="#" title="Address,State,Country,Pincode"><i class="fa fa-map-marker"></i></a>
+                        <a href="#"><i class="fa fa-phone"></i></a>
+                        <a href="#"><i class="fa fa-envelope"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="sub-footer">
+        All Copyright Reserved © 2021
+    </div>
 
 
 
