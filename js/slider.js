@@ -1,27 +1,60 @@
-var slideBtn = document.getElementsByClassName('slide-btn');
-var slide = document.getElementById("slide");
+let slides = document.querySelectorAll(".slide");
+let indicator = document.querySelectorAll(".indicator");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
 
-slideBtn[0].onclick = function() {
-  slide.style.transform = 'translateX(0rem)';
-  for(i=0; i<4; i++) {
-    slideBtn[i].classList.remove('active');
-  } this.classList.add('active');
+let index = 0;
+
+for (let i = 0; i < slides.length; i++) {
+  if (slides[i].classList.contains("active")) {
+    index = i
+  }
 }
-slideBtn[1].onclick = function() {
-  slide.style.transform = 'translateX(-45rem)';
-  for(i=0; i<4; i++) {
-    slideBtn[i].classList.remove('active');
-  } this.classList.add('active');
+
+prev.onclick = prevSlide;
+next.onclick = nextSlide;
+
+indicator.forEach(x => {
+  x.onclick = display;
+});
+
+function display() {
+  let num;
+  for (let i = 0; i < indicator.length; i++) {
+    indicator[i].classList.remove("active");
+    slides[i].classList.remove("active");
+  }
+  this.classList.add("active");
+  for (let i =0; i < indicator.length; i++) {
+    if (indicator[i].classList.contains("active")) {
+     num = i;
+    }
+  }
+  slides[num].classList.add("active");
+  index = num;
 }
-slideBtn[2].onclick = function() {
-  slide.style.transform = 'translateX(-90rem)';
-  for(i=0; i<4; i++) {
-    slideBtn[i].classList.remove('active');
-  } this.classList.add('active');
+
+function prevSlide() {
+  slides[index].classList.remove("active");
+  indicator[index].classList.remove("active");
+  index--;
+  console.log(index);
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+  slides[index].classList.add("active");
+  indicator[index].classList.add("active");
 }
-slideBtn[3].onclick = function() {
-  slide.style.transform = 'translateX(-135rem)';
-  for(i=0; i<4; i++) {
-    slideBtn[i].classList.remove('active');
-  } this.classList.add('active');
-}
+
+function nextSlide() {
+  slides[index].classList.remove("active");
+  indicator[index].classList.remove("active");
+  index++;
+  console.log(index);
+  if (index == slides.length) {
+    index = 0;
+  }
+  console.log(index);
+  slides[index].classList.add("active");
+  indicator[index].classList.add("active");
+}k
